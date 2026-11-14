@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Mochi — a cozy cat companion</title>
+  <meta name="description" content="A cozy cat companion for low-energy days: gentle check-ins, tiny tasks, a worry-eating cat, messages in a bottle, and a quiet world to wander.">
+  <meta name="theme-color" content="#FFC8A2">
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="icon.svg">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div id="app" class="app">
+    <header class="topbar">
+      <button id="catNameBtn" class="cat-name" aria-label="Your cat: look and wardrobe"><span aria-hidden="true">🐱</span> <span id="catName">Mochi</span></button>
+      <button id="moodBtn" class="mood-btn" aria-label="Today's blanket. Tap to check in">🐾</button>
+      <span class="spacer"></span>
+      <span id="yarn" class="yarn" role="status" aria-label="Yarn"><span aria-hidden="true">🧶</span> <span id="yarnCount">0</span></span>
+      <button id="settingsBtn" class="icon-btn" aria-label="Settings">⚙️</button>
+      <button id="helpBtn" class="help-btn" aria-label="Help — crisis lines and safety plan"><span aria-hidden="true">🛟</span> Help</button>
+    </header>
+
+    <main id="views" class="views">
+      <section id="homeView" class="view" aria-label="The mansion">
+        <div id="mansionWrap" class="mansion-wrap">
+          <canvas id="mansionCanvas" role="img" aria-label="Your cat's mansion, shown as a cutaway dollhouse with six rooms"></canvas>
+          <div id="roomButtons" class="room-buttons"></div>
+        </div>
+        <p class="hint">Tap a room to visit it · tap your cat to say hi</p>
+      </section>
+
+      <section id="mapView" class="view" aria-label="Whisker Isles world map" hidden>
+        <canvas id="worldCanvas" role="img" aria-label="Whisker Isles. Tap anywhere and your cat walks there."></canvas>
+        <div id="regionLabel" class="region-label" aria-live="polite"></div>
+        <div class="map-hud" role="toolbar" aria-label="Map tools">
+          <button id="hudHome" class="hud-btn" aria-label="Go home instantly">🏠<span>Home</span></button>
+          <button id="hudTravel" class="hud-btn" aria-label="Balloon fast travel">🎈<span>Travel</span></button>
+          <button id="hudCouch" class="hud-btn" aria-pressed="false" aria-label="Couch mode: just watch your cat wander">🛋️<span>Couch</span></button>
+          <button id="hudFinds" class="hud-btn" aria-label="My finds">📔<span>Finds</span></button>
+        </div>
+        <div id="joystick" class="joystick" hidden aria-hidden="true"><div class="knob"></div></div>
+        <div id="couchBar" class="couch-bar"><span>🛋️ Couch mode — just watching</span><button id="couchStop" class="btn small">Stop</button></div>
+        <div id="actionCard" class="action-card" hidden></div>
+      </section>
+
+      <div id="speech" class="speech" hidden role="dialog" aria-live="polite" aria-label="Your cat says"></div>
+    </main>
+
+    <nav class="bottombar" aria-label="Main">
+      <button id="navHome" class="nav-btn on" aria-current="page"><span class="emo" aria-hidden="true">🏠</span><span>Home</span></button>
+      <button id="navMap" class="nav-btn"><span class="emo" aria-hidden="true">🗺️</span><span>Map</span></button>
+      <button id="navBottles" class="nav-btn"><span class="emo" aria-hidden="true">🍾</span><span>Bottles</span></button>
+      <button id="navTasks" class="nav-btn"><span class="emo" aria-hidden="true">🧶</span><span>Tasks</span></button>
+    </nav>
+  </div>
+
+  <div id="sheetRoot"></div>
+  <div id="toasts" class="toasts" aria-live="polite"></div>
+  <div id="onboarding" class="onboarding" hidden></div>
+  <noscript><p style="padding:2rem">Mochi needs JavaScript to run. If you are in crisis, please contact your local emergency number or visit findahelpline.com.</p></noscript>
+
+  <script src="js/util.js"></script>
+  <script src="js/store.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/cat.js"></script>
+  <script src="js/audio.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/safety.js"></script>
+  <script src="js/calm.js"></script>
+  <script src="js/checkin.js"></script>
+  <script src="js/worry.js"></script>
+  <script src="js/bottles.js"></script>
+  <script src="js/settings.js"></script>
+  <script src="js/onboarding.js"></script>
+  <script src="js/minigames.js"></script>
+  <script src="js/mansion.js"></script>
+  <script src="js/world.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
